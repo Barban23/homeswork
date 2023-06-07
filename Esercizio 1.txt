@@ -1,0 +1,28 @@
+				Struttura giornata
+
+1. Sveglia
+2. utilizzo spotify
+3. preparazione per andare a lavoro
+4. controllo posta
+5. uso di istagram, spotify, maps mentre vado a lavoro
+6. Fine giornata lavorativa
+7. Rientro a casa
+8. controllo app banca
+9. controllo app news
+11. vado in palestra
+11. uso app di streaming (netflix, prime)
+12. imposto sveglia
+13. cena
+14. dormire
+
+I. Dati sulla posizione, prefereze musicali, preferenze contenuti social ,preferene news lette, preferenze film e/o serie viste, orari di sveglia, orario di dormire
+
+II. per me servono a calcolare percorsi, evitare possibili incidenti o code, per ascoltare musica che mi piace, vedere film che mi piacciono, per organizzarmi la giornata
+chi li raccoglie li può usare per effettuare studi per conto proprio, o venderli per consentire studi, per lo più di mercato
+
+III. Sono tutti dati sensibili
+
+IV. In linea teorica si, ma non del tutto, ci sono alcuni dati, che servono per far funzionare la maggior parete delle app che noi usiamo
+
+V. Si ho fornito il consenso
+
