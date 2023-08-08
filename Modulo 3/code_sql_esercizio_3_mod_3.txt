@@ -6,7 +6,7 @@ create table store_1
     indirizzo_store varchar(100) not null,
     recapito_store varchar(100) not null,
 		primary key (id_store)
-        );
+);
 create table impiegato_1 
 (
 	codice_fiscale varchar(16),
@@ -15,7 +15,10 @@ create table impiegato_1
     titolo_studio varchar(100),
     recapito_impiegato varchar(100) not null,
 		primary key (codice_fiscale)
-        );
+);
+
+CREATE INDEX idx_impiegato_1_carica ON impiegato_1 (carica);
+
 create table videogiochi_1 
 (
 	titolo varchar(100),
@@ -26,19 +29,24 @@ create table videogiochi_1
     prezzo int not null,
 		primary key (titolo, sviluppatore)
 );
+
+CREATE INDEX idx_videogiochi_1_titolo ON videogiochi_1 (titolo);
+CREATE INDEX idx_videogiochi_1_sviluppatore ON videogiochi_1 (sviluppatore);
+
 create table settore_1 
 (
 	id_settore varchar(100),
-    titolo_1 varchar(100) not null,
-    sviluppatore_1 varchar(100) not null,
+    titolo_1 varchar(100),
+    sviluppatore_1 varchar(100),
     n_settore varchar(100),
     posizione_settore varchar(100),
     n_copie_settore int,
     n_copie_remake int,
     id_store_uni varchar(100),
 		primary key (id_settore,id_store_uni),
-			foreign key (titolo_1) references videogiochi_1(titolo) on update cascade on delete no action,
-            foreign key (sviluppatore_1) references videogiochi_1(sviluppatore) on update cascade on delete no action
+			CONSTRAINT settore_1_ibfk_2
+FOREIGN KEY (titolo_1,sviluppatore_1)
+REFERENCES videogiochi_1 (titolo,sviluppatore)
 );
 create table timeline 
 (
@@ -49,5 +57,7 @@ create table timeline
 	carica_1 varchar(100) not null,
 		primary key (cf_impiegato,data_inizio,data_fine),
 			foreign key (code_store) references store_1(id_store) on update cascade on delete no action,
-            foreign key (carica_1) references impiegato_1(carica) on update cascade on delete no action
+            CONSTRAINT impiegato_1_ibfk_2
+FOREIGN KEY (carica_1)
+REFERENCES impiegato_1 (carica)
 );
