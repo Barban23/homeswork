@@ -1,0 +1,46 @@
+create database esercizio_4_mod_4;
+
+use esercizio_4_mod_4;
+
+create table areoporto (
+	città varchar(100),
+	nazione varchar(100),
+    num_pista tinyint unsigned,
+		primary key(città)
+);
+
+create table aereo (
+	tipo_aereo varchar(100),
+    num_pass smallint unsigned,
+    qnt_merci int unsigned,
+		primary key (tipo_aereo)
+);
+
+
+
+create table volo (
+	id_volo varchar(10),
+    giorno_sett enum("monday","tuesday","wednesday","thursday","friday","saturday","sunday"),
+    città_part varchar(10),
+    ora_part time,
+    città_arr varchar(10),
+    ora_arr time,
+    tipo_aereo1 varchar(100),
+		primary key (id_volo),
+			foreign key (tipo_aereo1) references aereo(tipo_aereo) on update cascade on delete no action
+);
+
+
+PARTE 2 (INTERROGAZIONI AL DATABASE)
+
+use esercizio_4_mod_4;
+
+select città from areoporto where num_pista is null;
+
+select tipo_aereo1 from volo where città_part="torino";
+
+select città_part from volo where città_arr="bologna";
+
+select città_part,città_arr from volo where id_volo="AZ274";
+
+select tipo_aereo1,giorno_sett,ora_part from volo where città_part like "b%o%" and città_arr like "%e%a";
