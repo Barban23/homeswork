@@ -1,4 +1,4 @@
-use dapt0523;
+git use dapt0523;
 create table store_1 
 (
 	id_store varchar(100),
